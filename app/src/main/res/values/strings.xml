@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MedBot</string>
+    <string name="med_bot">MED - BOT</string>
+    <string name="splash_scn_img_descrip">This is the logo of the project</string>
+    <string name="this_is_person_icon">This is person icon</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="full_name">Full name</string>
+    <string name="acidity">Acidity</string>
+    <string name="if_you_have_already_an_account">If you have already an account</string>
+    <string name="name">Name:</string>
+    <string name="ankit_singh">Ankit Singh</string>
+    <string name="age">Age:</string>
+    <string name="_19">19</string>
+    <string name="e_mail">E-mail:</string>
+    <string name="my_email">ankit.singh4x@gmail.com</string>
+    <string name="phone_no">Phone no:</string>
+    <string name="_8789286009">8789286009</string>
+</resources>
