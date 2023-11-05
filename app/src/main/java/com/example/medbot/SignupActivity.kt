@@ -20,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var retrofit: Retrofit
-    private val fullName: EditText = findViewById<EditText>(R.id.signup_fullname_et)
+    private val username: EditText = findViewById<EditText>(R.id.signup_fullname_et)
     private val email: EditText = findViewById<EditText>(R.id.signup_email_et)
     private val phone_no:EditText = findViewById<EditText>(R.id.signup_phone_et)
     private val age: EditText = findViewById<EditText>(R.id.signup_age_et)
@@ -73,7 +73,7 @@ class SignupActivity : AppCompatActivity() {
     private fun handleSignup() {
 
         val userData = UserData(
-            fullName.text.toString(),
+            username.text.toString(),
             email.text.toString(),
             phone_no.text.toString(),
             age.text.toString().toInt(),
