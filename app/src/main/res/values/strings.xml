@@ -16,4 +16,8 @@
     <string name="phone_no">Phone no:</string>
     <string name="_8789286009">8789286009</string>
     <string name="feedback">Feedback</string>
+    <string name="feedback_scn_msg">Any feedback or suggestions would be appreciated</string>
+    <string name="message">Message</string>
+    <string name="send">SEND</string>
+    <string name="show_password">Show password</string>
 </resources>

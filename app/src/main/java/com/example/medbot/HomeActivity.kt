@@ -70,6 +70,8 @@ class HomeActivity : AppCompatActivity() {
                     .LENGTH_SHORT).show()
             }
             R.id.menu_feedback -> {
+                val it = Intent(this@HomeActivity, FeedbackActivity::class.java)
+                startActivity(it)
                 Toast.makeText(this@HomeActivity, "Feedback menu selected!", Toast.LENGTH_SHORT).show()
             }
         }

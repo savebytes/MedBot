@@ -50,6 +50,10 @@
             android:label="Profile"
             android:launchMode="singleTask"
             />
+        <activity android:name=".FeedbackActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            />
     </application>
 
 </manifest>
