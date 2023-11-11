@@ -20,22 +20,18 @@ import retrofit2.converter.gson.GsonConverterFactory
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var retrofit: Retrofit
-    private val username: EditText = findViewById<EditText>(R.id.signup_fullname_et)
-    private val email: EditText = findViewById<EditText>(R.id.signup_email_et)
-    private val phone_no:EditText = findViewById<EditText>(R.id.signup_phone_et)
-    private val age: EditText = findViewById<EditText>(R.id.signup_age_et)
-    private val createPass:EditText = findViewById<EditText>(R.id.signup_create_pass_et)
-    private val confirmPass:EditText = findViewById<EditText>(R.id.signup_retype_pass_et)
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
-    private val showPassSwitch: Switch = findViewById<Switch>(R.id.signup_scn_show_pass)
-    private val signupBtn:Button = findViewById<Button>(R.id.signup_scn_sbm_btn)
-    private val signinBtn:Button = findViewById<Button>(R.id.signup_scn_signin_btn)
-
-
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
+
+
+        val createPass:EditText = findViewById<EditText>(R.id.signup_create_pass_et)
+        val confirmPass:EditText = findViewById<EditText>(R.id.signup_retype_pass_et)
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        val showPassSwitch: Switch = findViewById<Switch>(R.id.signup_scn_show_pass)
+        val signupBtn:Button = findViewById<Button>(R.id.signup_scn_sbm_btn)
+        val signinBtn:Button = findViewById<Button>(R.id.signup_scn_signin_btn)
 
 
         showPassSwitch.setOnCheckedChangeListener{ _, isChecked ->
@@ -51,9 +47,6 @@ class SignupActivity : AppCompatActivity() {
         }
 
         signupBtn.setOnClickListener() {
-            val intent = Intent(this@SignupActivity, HomeActivity::class.java)
-            startActivity(intent)
-
             if (createPass.text.toString() == confirmPass.text.toString()){
                 handleSignup()
             }
@@ -71,6 +64,12 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun handleSignup() {
+        val username: EditText =  findViewById<EditText>(R.id.signup_fullname_et)
+        val email: EditText = findViewById<EditText>(R.id.signup_email_et)
+        val phone_no:EditText = findViewById<EditText>(R.id.signup_phone_et)
+        val age: EditText = findViewById<EditText>(R.id.signup_age_et)
+        val createPass:EditText = findViewById<EditText>(R.id.signup_create_pass_et)
+        val confirmPass:EditText = findViewById<EditText>(R.id.signup_retype_pass_et)
 
         val userData = UserData(
             username.text.toString(),
@@ -84,9 +83,11 @@ class SignupActivity : AppCompatActivity() {
         call.enqueue(object : Callback<ApiResponse> {
             override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
                 if (response.isSuccessful) {
+                    val intent = Intent(this@SignupActivity, HomeActivity::class.java)
+                    startActivity(intent)
                     val message = response.body()?.message
                     // Handle the success response here
-                    Toast.makeText(this@SignupActivity, "Signed up Successfully!", Toast
+                    Toast.makeText(this@SignupActivity, message, Toast
                         .LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this@SignupActivity, "Signed up Unsuccessfully!", Toast
@@ -95,7 +96,8 @@ class SignupActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
-                // Handle the network or other errors here
+                Toast.makeText(this@SignupActivity, "Failed!${t}", Toast.LENGTH_SHORT).show()
+                println(t)
             }
         })
     }

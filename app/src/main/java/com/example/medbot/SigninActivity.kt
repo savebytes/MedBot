@@ -46,10 +46,5 @@ class SigninActivity : AppCompatActivity() {
             }
         }
 
-        signinBtn.setOnClickListener(){
-
-        }
-
-
     }
 }

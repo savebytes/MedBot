@@ -15,11 +15,10 @@
         android:title="TODO"
         tools:ignore="HardcodedText" />
     <item
-        android:id="@+id/menu_option"
-        android:icon="@drawable/ic_menu"
+        android:id="@+id/menu_saved_chat"
         app:showAsAction="withText"
-        android:title="TODO"
+        android:title="Saved chat"
         tools:ignore="HardcodedText" />
-    <item android:id="@+id/menu_saved_chat"
-        android:title=""/>
+    <item android:id="@+id/menu_feedback"
+        android:title="@string/feedback"/>
 </menu>

@@ -55,10 +55,6 @@ class HomeActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId){
-            R.id.menu_option -> {
-                Toast.makeText(this@HomeActivity, "Option menu selected!", Toast.LENGTH_SHORT)
-                    .show()
-            }
             R.id.menu_newchat -> {
                 Toast.makeText(this@HomeActivity, "New Chat menu selected!", Toast.LENGTH_SHORT)
                     .show()
@@ -68,6 +64,13 @@ class HomeActivity : AppCompatActivity() {
                     .show()
                 val intent = Intent(this@HomeActivity, ProfileActivity::class.java)
                 startActivity(intent)
+            }
+            R.id.menu_saved_chat -> {
+                Toast.makeText(this@HomeActivity, "Saved chat menu selected!", Toast
+                    .LENGTH_SHORT).show()
+            }
+            R.id.menu_feedback -> {
+                Toast.makeText(this@HomeActivity, "Feedback menu selected!", Toast.LENGTH_SHORT).show()
             }
         }
 
