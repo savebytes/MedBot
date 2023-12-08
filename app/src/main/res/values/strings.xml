@@ -20,4 +20,6 @@
     <string name="message">Message</string>
     <string name="send">SEND</string>
     <string name="show_password">Show password</string>
+    <string name="ask_your_question">Ask your question...</string>
+    <string name="ok">OK</string>
 </resources>

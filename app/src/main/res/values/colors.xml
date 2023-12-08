@@ -5,4 +5,5 @@
     <color name="ColorPrimary">#CED4DA</color>
     <color name="ColorAccent">#495057</color>
     <color name="ColorTextHint">#868E96</color>
+    <color name="ColorAccent2">#D1CFC1</color>
 </resources>

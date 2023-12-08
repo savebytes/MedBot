@@ -56,6 +56,8 @@ class HomeActivity : AppCompatActivity() {
 
         when (item.itemId){
             R.id.menu_newchat -> {
+                val intent = Intent(this@HomeActivity, ChatActivity::class.java)
+                startActivity(intent)
                 Toast.makeText(this@HomeActivity, "New Chat menu selected!", Toast.LENGTH_SHORT)
                     .show()
             }
@@ -68,6 +70,8 @@ class HomeActivity : AppCompatActivity() {
             R.id.menu_saved_chat -> {
                 Toast.makeText(this@HomeActivity, "Saved chat menu selected!", Toast
                     .LENGTH_SHORT).show()
+                val intent = Intent(this@HomeActivity, SavedChatListActivity::class.java)
+                startActivity(intent)
             }
             R.id.menu_feedback -> {
                 val it = Intent(this@HomeActivity, FeedbackActivity::class.java)
